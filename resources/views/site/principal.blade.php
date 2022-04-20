@@ -1,22 +1,22 @@
-<h3>Principal view</h3>
+<!DOCTYPE html>
+<html lang="en">
 
-<ul>
-  <li>
-    <a href="{{ route('') }}">Principal</a>
-  </li>
-  <li>
-    <a href="{{ route('/artists') }}">Artistas</a>
-  </li>
-  <li>
-    <a href="{{ route('/albums') }}">Álbums</a>
-  </li>
-  <li>
-    <a href="{{ route('/musics') }}">Músicas</a>
-  </li>
-  <li>
-    <a href="{{ route('/playlists') }}">Playlists</a>
-  </li>
-  <li>
-    <a href="{{ route('/users') }}">Usuários</a>
-  </li>
-</ul>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h3>Principal view</h3>
+
+  <ul>
+    <li>
+      <a href="{{ route('admin.artists.index') }}">Artistas</a>
+    </li>
+  </ul>
+
+</body>
+
+</html>

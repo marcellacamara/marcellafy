@@ -8,25 +8,21 @@ use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::resource('albums.musics', MusicController::class)->shallow();
+    Route::resource('artists.albums', AlbumController::class)->shallow();
+    Route::resource('artists', ArtistController::class);
+});
 
-Route::resource('artists.albums', AlbumController::class)->shallow();
+Route::get('/login', function () {
+    return 'login';
+})->name('login');
 
-Route::resource('artists', ArtistController::class);
+Route::fallback(function () {
+    echo 'ERROR 404. Page not found. <br> <a href="/">Go to home</a>';
+});
 
-Route::resource('albums.musics', MusicController::class)->shallow();
+// Route::get('/users', [UserController::class, 'user']);
+// Route::get('/playlists', [PlaylistController::class, 'playlist']);
 
-
-
-Route::get('/users', [UserController::class, 'user']);
-
-Route::get('/playlists', [PlaylistController::class, 'playlist']);
-
-Route::get('/musics', [MusicController::class, 'music']);
-
-//Route::get('/albums', [AlbumController::class, 'album']);
-
-// Route::get('/artist/{id}', [ArtistController::class, 'show']);
-
-// Route::get('/artist', [ArtistController::class, 'index']);
-
-Route::get('/', [PrincipalController::class, 'principal']);
+Route::get('/', [PrincipalController::class, 'index'])->name('principal');
