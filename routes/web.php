@@ -26,3 +26,9 @@ Route::fallback(function () {
 // Route::get('/playlists', [PlaylistController::class, 'playlist']);
 
 Route::get('/', [PrincipalController::class, 'index'])->name('principal');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';

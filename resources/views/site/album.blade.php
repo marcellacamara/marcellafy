@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('templates.template')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+@section('content')
+  @php
+  $title = 'Álbum view';
+  @endphp
+  <h3 class="text-center">{{ $title }}</h3>
 
-<body>
-  <h3>Album view</h3>
-
-  <li>
-    <a href="{{ route('admin.albums.musics') }}">Músicas</a>
-  </li>
-
-</body>
-
-</html>
+  <ul>
+    <li>
+      <a href="{{ route('admin.albums.musics') }}">Músicas</a>
+    </li>
+  </ul>
+@endsection

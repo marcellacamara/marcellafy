@@ -10,17 +10,20 @@ class ArtistController extends Controller
 
     public function index()
     {
-        //
+        return view('artists.index', [
+            'artist' => Artist::all()
+        ]);
     }
 
     public function create()
     {
-        //
+        return view('artists.create');
     }
 
     public function store(Request $request)
     {
-        //
+        Artist::create($request->all());
+        return redirect()->route('admin.artists.index');
     }
 
     public function show(Artist $artist)
