@@ -28,7 +28,7 @@ Route::fallback(function () {
 Route::get('/', [PrincipalController::class, 'index'])->name('principal');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('site.dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
