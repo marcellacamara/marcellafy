@@ -2,64 +2,60 @@
 
 @section('content')
   @php
-  $title = 'Artista view';
+  $title = 'Álbum view';
   @endphp
   <h3 class="text-center">{{ $title }}</h3>
+
+  <label for="name">{{ $artist->name }}</label>
   <hr>
 
   <div class="mt-3 mb-4 text-center">
-    <a href="{{ route('admin.artists.create') }}" class="btn btn-success">Cadastrar</a>
+    <a href="{{ route('admin.artists.albums.create', $artist->id) }}" class="btn btn-success">Cadastrar</a>
   </div>
-
-  <li>
-    <a href="{{ route('principal') }}">Dashboard</a>
-  </li>
 
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Avatar</th>
-        <th scope="col">Artista</th>
+        <th scope="col">Capa</th>
+        <th scope="col">Título</th>
         <th scope="col">Ações</th>
       </tr>
     </thead>
 
     <tbody>
-      @foreach ($artists as $artist)
+      @foreach ($artist->albums as $album)
         <tr>
           <td>
-            <a href="{{ route('admin.artists.albums.index', $artist->id) }}">{{ $artist->name }}</a>
-          </td>
-          <td>
-            <img src="{{ asset($artist->avatar) }}" alt="{{ $artist->name }}"
+            <img src="{{ asset($album->cover_image) }}" alt="{{ $artist->name }}"
               style="width: 4rem; height: 4rem; border-radius: 4rem; object-fit: cover;">
           </td>
+          <td>{{ $album->title }}</td>
           <td>
-            <a href="{{ route('admin.artists.edit', $artist->id) }}" class="btn btn-primary">Editar</a>
+            <a href="{{ route('admin.albums.edit', $album->id) }}" class="btn btn-primary">Editar</a>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-danger" data-toggle="modal"
-              data-target="#destroyModal-{{ $artist->id }}">
+              data-target="#destroyModal-{{ $album->id }}">
               Deletar
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="destroyModal-{{ $artist->id }}" tabindex="-1" role="dialog"
+            <div class="modal fade" id="destroyModal-{{ $album->id }}" tabindex="-1" role="dialog"
               aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Deletar artista</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Deletar álbum</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    Tem certeza que deseja deletar {{ $artist->name }}?
+                    Tem certeza que deseja deletar {{ $album->title }}?
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <form action="{{ route('admin.artists.destroy', $artist->id) }}" method="post">
+                    <form action="{{ route('admin.albums.destroy', $album->id) }}" method="post">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger">Deletar</button>
@@ -71,10 +67,7 @@
           </td>
         </tr>
       @endforeach
+
     </tbody>
   </table>
-
-  {{-- <li>
-    <a href="{{ route('admin.artists.albums.index') }}">Álbums</a>
-  </li> --}}
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ArtistController extends Controller
@@ -25,7 +26,7 @@ class ArtistController extends Controller
     {
         Artist::create([
             'name' => $request->name,
-            'avatar' => $request->file('avatar')->store('images'),
+            'avatar' => $request->file('avatar')->store('images/artists'),
         ]);
 
         return redirect()->route('admin.artists.index');
@@ -48,7 +49,7 @@ class ArtistController extends Controller
     public function update(Request $request, Artist $artist)
     {
         $artist->name = $request->name;
-        $artist->avatar = $request->file('avatar')->store('images');
+        $artist->avatar = $request->file('avatar')->store('images/artists');
         $artist->save();
 
         return redirect()->route('admin.artists.index');
@@ -56,6 +57,11 @@ class ArtistController extends Controller
 
     public function destroy(Artist $artist)
     {
+        if ((bool)$artist->albums->count()) {
+            return back()->with('error', "Não é possível deletar um artista que possui álbum cadastrado!");
+        }
+
+        Storage::delete($artist->avatar);
         $artist->delete();
 
         return redirect()->route('admin.artists.index');

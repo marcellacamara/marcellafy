@@ -2,7 +2,7 @@
 
 @section('content')
   @php
-  $title = 'Edit view';
+  $title = 'Editar artista';
   @endphp
   <h3 class="text-center">{{ $title }}</h3>
   <hr>

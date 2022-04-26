@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAlbumsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('albums', function (Blueprint $table) {
@@ -19,17 +14,12 @@ class CreateAlbumsTable extends Migration
             $table->string('title');
             $table->foreignIdFor(Artist::class)->unique()->constrained();
             $table->string('cover_image');
-            $table->integer('duration');
+            $table->integer('duration')->default(0);
             $table->year('year');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('albums');
