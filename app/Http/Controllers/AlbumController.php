@@ -33,6 +33,8 @@ class AlbumController extends Controller
             'duration' => 0,
             'year' => $request->year,
         ]);
+
+        return redirect()->route('admin.artists.albums.index', $artist->id);
     }
 
     public function show(Album $album)

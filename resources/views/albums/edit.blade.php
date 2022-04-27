@@ -4,7 +4,7 @@
   @php
   $title = 'Editar álbum';
   @endphp
-  <h3 class="text-center">{{ $album->marcella() }}</h3>
+  <h3 class="text-center">{{ $title }}</h3>
   <hr>
 
   <div class="m-auto col-8">

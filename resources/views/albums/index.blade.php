@@ -10,7 +10,7 @@
   <hr>
 
   <div class="mt-3 mb-4 text-center">
-    <a href="{{ route('admin.artists.albums.create', $artist->id) }}" class="btn btn-success">Cadastrar</a>
+    <a href="{{ route('admin.artists.albums.create', $artist->id) }}" class="btn btn-success">Cadastrar álbum</a>
   </div>
 
   <table class="table table-striped">
@@ -29,7 +29,9 @@
             <img src="{{ asset($album->cover_image) }}" alt="{{ $artist->name }}"
               style="width: 4rem; height: 4rem; border-radius: 4rem; object-fit: cover;">
           </td>
-          <td>{{ $album->title }}</td>
+          <td>
+            <a href="{{ route('admin.albums.musics.index', $artist->id) }}">{{ $album->title }}</a>
+          </td>
           <td>
             <a href="{{ route('admin.albums.edit', $album->id) }}" class="btn btn-primary">Editar</a>
 

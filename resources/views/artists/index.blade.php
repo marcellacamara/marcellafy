@@ -18,8 +18,8 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Avatar</th>
         <th scope="col">Artista</th>
+        <th scope="col">Avatar</th>
         <th scope="col">Ações</th>
       </tr>
     </thead>
