@@ -13,7 +13,8 @@
       @method('PUT')
       <div class="form-group">
         <label for="name">Nome do álbum</label>
-        <input type="text" name="title" id="title" class="form-control" placeholder="Nome:" value="{{ $album->name }}">
+        <input type="text" name="title" id="title" class="form-control" placeholder="Nome:"
+          value="{{ $album->title }}">
       </div>
 
       <div class="form-group">
@@ -23,7 +24,7 @@
 
       <div class="form-group">
         <label for="avatar">Ano</label>
-        <input type="year" name="year" id="year" class="form-control">
+        <input type="year" name="year" id="year" class="form-control" value="{{ $album->year }}">
       </div>
 
       <div class="form-group">

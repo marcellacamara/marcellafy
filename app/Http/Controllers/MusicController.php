@@ -30,7 +30,6 @@ class MusicController extends Controller
             'album_id' => $album->id,
             'duration' => 0,
             'file' => $request->file('file')->store('music'),
-            //Str::slug($album->artist->name) . '/' . Str::slug($album->title)),
         ]);
 
         return redirect()->route('admin.albums.musics.index', [$album->id]);

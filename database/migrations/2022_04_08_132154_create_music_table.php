@@ -14,7 +14,7 @@ class CreateMusicTable extends Migration
      */
     public function up()
     {
-        Schema::create('music', function (Blueprint $table) {
+        Schema::create('musics', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->foreignIdFor(Album::class)->constrained();
@@ -31,6 +31,6 @@ class CreateMusicTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('music');
+        Schema::dropIfExists('musics');
     }
 }

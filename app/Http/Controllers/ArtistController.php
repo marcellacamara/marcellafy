@@ -59,6 +59,7 @@ class ArtistController extends Controller
     {
         if ((bool)$artist->albums->count()) {
             return redirect()->back()->with('error', "Não é possível deletar um artista que possui álbum cadastrado!");
+            dd('ok');
         }
 
         Storage::delete($artist->avatar);

@@ -7,13 +7,24 @@
   <h3 class="text-center">{{ $title }}</h3>
   <hr>
 
+  @if (session()->has('error'))
+    <div class="alert alert-dismissible alert-danger fade show">
+      {{-- <button type="button" class="close" data-dismiss="alter" aria-label="Close"> --}}
+      <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>
+        {!! session()->get('error') !!}
+      </strong>
+    </div>
+  @endif
+
   <div class="mt-3 mb-4 text-center">
     <a href="{{ route('admin.artists.create') }}" class="btn btn-success">Cadastrar</a>
   </div>
 
-  <li>
-    <a href="{{ route('principal') }}">Dashboard</a>
-  </li>
+  <div>
+    <a href="{{ route('dashboard') }}" class="btn btn-primary">Dashboard</a>
+  </div>
 
   <table class="table table-striped">
     <thead>
@@ -37,13 +48,11 @@
           <td>
             <a href="{{ route('admin.artists.edit', $artist->id) }}" class="btn btn-primary">Editar</a>
 
-            <!-- Button trigger modal -->
             <button type="button" class="btn btn-danger" data-toggle="modal"
               data-target="#destroyModal-{{ $artist->id }}">
               Deletar
             </button>
 
-            <!-- Modal -->
             <div class="modal fade" id="destroyModal-{{ $artist->id }}" tabindex="-1" role="dialog"
               aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -73,8 +82,4 @@
       @endforeach
     </tbody>
   </table>
-
-  {{-- <li>
-    <a href="{{ route('admin.artists.albums.index') }}">Álbums</a>
-  </li> --}}
 @endsection
