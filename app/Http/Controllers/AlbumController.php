@@ -30,7 +30,6 @@ class AlbumController extends Controller
             'title' => $request->title,
             'artist_id' => $artist->id,
             'cover_image' => $request->file('cover_image')->store('images/albums'),
-            'duration' => 0,
             'year' => $request->year,
         ]);
 

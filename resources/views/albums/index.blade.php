@@ -9,11 +9,8 @@
   <label for="name">{{ $artist->name }}</label>
   <hr>
 
-  <div>
-    <a href="{{ route('dashboard') }}" class="btn btn-primary">Dashboard</a>
-  </div>
-
   <div class="mt-3 mb-4 text-center">
+    <a href="{{ route('dashboard') }}" class="btn btn-dark">Dashboard</a>
     <a href="{{ route('admin.artists.albums.create', $artist->id) }}" class="btn btn-success">Cadastrar álbum</a>
   </div>
 
@@ -37,7 +34,7 @@
             <a href="{{ route('admin.albums.musics.index', $album->id) }}">{{ $album->title }}</a>
           </td>
           <td>
-            <a href="{{ route('admin.albums.edit', $album->id) }}" class="btn btn-primary">Editar</a>
+            <a href="{{ route('admin.albums.edit', $album->id) }}" class="btn btn-dark">Editar</a>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-danger" data-toggle="modal"

@@ -13,12 +13,12 @@
       @method('PUT')
       <div class="form-group">
         <label for="name">Nome do álbum</label>
-        <input type="text" name="title" id="title" class="form-control" placeholder="Nome:"
+        <input type="text" name="title" id="title" class="form-control" placeholder="Título:"
           value="{{ $album->title }}">
       </div>
 
       <div class="form-group">
-        <label for="avatar">Capa do álbum</label>
+        <label for="file">Capa do álbum</label>
         <input type="file" name="cover_image" id="cover_image" class="form-control">
       </div>
 

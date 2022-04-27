@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Album;
 use App\Models\Music;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MusicController extends Controller
 {
@@ -28,8 +29,7 @@ class MusicController extends Controller
         Music::create([
             'title' => $request->title,
             'album_id' => $album->id,
-            'duration' => 0,
-            'file' => $request->file('file')->store('music'),
+            'file' => $request->file('file')->store('musics'),
         ]);
 
         return redirect()->route('admin.albums.musics.index', [$album->id]);
@@ -37,21 +37,31 @@ class MusicController extends Controller
 
     public function show(Album $album, Music $music)
     {
-        //
+        return view('musics.index', [
+            'album' => $album,
+            'music' => $music,
+        ]);
     }
 
     public function edit(Music $music)
     {
-        //
+        return view('musics.edit', [
+            'music' => $music,
+        ]);
     }
 
     public function update(Request $request, Music $music)
     {
-        //
+        $music->title = $request->title;
+        $music->file = $request->file('file')->store('musics');
+        $music->save();
     }
 
     public function destroy(Music $music)
     {
-        //
+        Storage::delete($music->file);
+        $music->delete();
+
+        return redirect()->route('admin.albums.musics.index', $music->album->id);
     }
 }

@@ -6,27 +6,39 @@
   @endphp
 
   @if (Route::has('login'))
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+    <div class="fixed top-0 right-0 hidden px-6 py-4 sm:block">
       @auth
-        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline dark:text-gray-500">Dashboard</a>
       @else
-        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline dark:text-gray-500">Log in</a>
 
         @if (Route::has('register'))
-          <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+          <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline dark:text-gray-500">Register</a>
         @endif
       @endauth
     </div>
   @endif
 
-  <h3 class="text-center">{{ $title }}</h3>
+  <h2 class="text-center">{{ $title }}</h2>
   <hr>
 
   <div>
     <ul>
-      <li>
-        <a href="{{ route('admin.artists.index') }}">Artistas</a>
-      </li>
+      <a href="{{ route('admin.artists.index') }}"><button type="button " class="btn btn-dark">Artistas</button></a>
     </ul>
   </div>
+
+  {{-- <div>
+    <ul>
+      <a href="{{ route('admin.artists.albums.index', $artist->id) }}"><button type="button "
+          class="btn btn-dark">Álbuns</button></a>
+    </ul>
+  </div> --}}
+
+  {{-- <div>
+    <ul>
+      <a href="{{ route('admin.albums.musics.index', $album->id) }}"><button type="button "
+          class="btn btn-dark">Músicas</button></a>
+    </ul>
+  </div> --}}
 @endsection
