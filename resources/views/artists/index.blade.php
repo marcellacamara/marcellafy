@@ -19,12 +19,11 @@
   @endif
 
   <div class="mt-3 mb-4 text-center">
+    <a href="{{ route('dashboard') }}" class="btn btn-dark">Dashboard</a>
     <a href="{{ route('admin.artists.create') }}" class="btn btn-success">Cadastrar</a>
   </div>
 
-  <div>
-    <a href="{{ route('dashboard') }}" class="btn btn-primary">Dashboard</a>
-  </div>
+  <hr>
 
   <table class="table table-striped">
     <thead>
@@ -46,7 +45,7 @@
               style="width: 4rem; height: 4rem; border-radius: 4rem; object-fit: cover;">
           </td>
           <td>
-            <a href="{{ route('admin.artists.edit', $artist->id) }}" class="btn btn-primary">Editar</a>
+            <a href="{{ route('admin.artists.edit', $artist->id) }}" class="btn btn-dark">Editar</a>
 
             <button type="button" class="btn btn-danger" data-toggle="modal"
               data-target="#destroyModal-{{ $artist->id }}">

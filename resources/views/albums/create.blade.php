@@ -15,7 +15,7 @@
       </div>
 
       <div class="form-group">
-        <label for="avatar">Capa do álbum</label>
+        <label for="file">Capa do álbum</label>
         <input type="file" name="cover_image" id="cover_image" class="form-control">
       </div>
 

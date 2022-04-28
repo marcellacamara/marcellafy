@@ -9,11 +9,8 @@
   <label for="name">{{ $album->title }}</label>
   <hr>
 
-  <div>
-    <a href="{{ route('dashboard') }}" class="btn btn-primary">Dashboard</a>
-  </div>
-
   <div class="mt-3 mb-4 text-center">
+    <a href="{{ route('dashboard') }}" class="btn btn-dark">Dashboard</a>
     <a href="{{ route('admin.albums.musics.create', $album->id) }}" class="btn btn-success">Cadastrar música</a>
   </div>
 
@@ -39,6 +36,7 @@
           <td>{{ $music->title }}</td>
           <td>{{ $music->duration }}</td>
           <td>
+            <a href="{{ route('admin.musics.edit', $music->id) }}" class="btn btn-dark">Editar</a>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-danger" data-toggle="modal"
@@ -62,7 +60,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <form action="{{ route('admin.albums.destroy', $music->id) }}" method="post">
+                    <form action="{{ route('admin.musics.destroy', $music->id) }}" method="post">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger">Deletar</button>
