@@ -1,3 +1,4 @@
+@props(['title'])
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,20 +10,16 @@
   <title>MarcellaFy</title>
 </head>
 
-<body class="bg-black text-gray-100">
-  <nav class=" relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-500 mb-3">
+<body>
+  <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-500 mb-3">
     <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
       <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-        <a class="text-sm font-bold hover:bg-black rounded-md hover:text-lime-400 transition-all leading-relaxed inline-block mr-4 py-2 px-4 whitespace-nowrap uppercase text-white"
+        <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
           href="/dashboard">
-          Dashboard
-        </a>
-        <a class="text-sm font-bold hover:bg-black rounded-md hover:text-lime-400 transition-all leading-relaxed inline-block mr-4 py-2 px-4 whitespace-nowrap uppercase text-white"
-          href="/admin/artists">
-          Artistas
+          {{ $title }}
         </a>
         <button
-          class="cursor-pointer text-xl leading-none px-3 py-1 border border-double rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+          class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
           type="button">
           <span class="block relative w-6 h-px rounded-sm bg-white"></span>
           <span class="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
@@ -34,7 +31,7 @@
           {{-- texto e icone --}}
           <li class="nav-item">
             <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-              href="('/user')">
+              href="{{ $link }}">
               <x-feathericon-user />
               <span class="ml-2">Profile</span>
             </a>
