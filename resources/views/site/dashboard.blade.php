@@ -1,8 +1,7 @@
-@extends('templates.template')
+<x-layout.admin>
 
-@section('content')
   @php
-  $title = 'Principal view';
+    $title = 'Principal view';
   @endphp
 
   @if (Route::has('login'))
@@ -29,4 +28,4 @@
       </li>
     </ul>
   </div>
-@endsection
+</x-layout.admin>
