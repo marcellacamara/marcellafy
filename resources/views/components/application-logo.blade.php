@@ -1,1 +1,1 @@
-<img class="w-60" src="icons/icon_onda_sonora.png" alt="logotipo" , {{ $attributes }}>
+<img class="w-20" src="icons/icone-notas-musicais.png" alt="logotipo" , {{ $attributes }}>

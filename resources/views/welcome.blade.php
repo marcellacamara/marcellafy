@@ -9,13 +9,13 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
+
+
 <body class="bg-gradient-to-r from-purple-500 to-pink-500 w-screen">
+  <x-layout.topbar />
   <div class="grid grid-cols-1 place-items-center">
     <div>
-      <img class="w-60 sm:w-72 pt-16" src="icons/marcellafy.png" alt="logo-marcellafy">
-    </div>
-    <div>
-      <img class="w-10 sm:w-20 pt-24" src="icons/icone-notas-musicais.png" alt="logo-welcome">
+      <img class="w-10 sm:w-20 pt-36" src="icons/icone-notas-musicais.png" alt="logo-welcome">
     </div>
     <div>
       <p class="text-black text-center font-semibold hover:font-bold text-2xl sm:text-6xl pt-4">

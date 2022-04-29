@@ -10,6 +10,7 @@
 </head>
 
 <body class="text-gray-100 bg-gradient-to-r from-purple-500 to-pink-500">
+  <x-layout.topbar />
   <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-transparent">
     <div class="container flex flex-wrap items-center justify-between px-4 mx-auto">
       <div class="relative flex justify-between w-full px-4 lg:w-auto lg:static lg:block lg:justify-start">
