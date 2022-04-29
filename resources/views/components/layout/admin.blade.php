@@ -9,31 +9,31 @@
   <title>MarcellaFy</title>
 </head>
 
-<body class="bg-black text-gray-100">
-  <nav class=" relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-500 mb-3">
-    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
-      <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-        <a class="text-sm font-bold hover:bg-black rounded-md hover:text-lime-400 transition-all leading-relaxed inline-block mr-4 py-2 px-4 whitespace-nowrap uppercase text-white"
+<body class="text-gray-100 bg-violet">
+  <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-pink-500 ">
+    <div class="container flex flex-wrap items-center justify-between px-4 mx-auto">
+      <div class="relative flex justify-between w-full px-4 lg:w-auto lg:static lg:block lg:justify-start">
+        <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:bg-black hover:text-lime-400 whitespace-nowrap"
           href="/dashboard">
           Dashboard
         </a>
-        <a class="text-sm font-bold hover:bg-black rounded-md hover:text-lime-400 transition-all leading-relaxed inline-block mr-4 py-2 px-4 whitespace-nowrap uppercase text-white"
+        <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:bg-black hover:text-lime-400 whitespace-nowrap"
           href="/admin/artists">
           Artistas
         </a>
         <button
-          class="cursor-pointer text-xl leading-none px-3 py-1 border border-double rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+          class="block px-3 py-1 text-xl leading-none bg-transparent border border-double rounded outline-none cursor-pointer lg:hidden focus:outline-none"
           type="button">
-          <span class="block relative w-6 h-px rounded-sm bg-white"></span>
-          <span class="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-          <span class="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
+          <span class="relative block w-6 h-px bg-white rounded-sm"></span>
+          <span class="relative block w-6 h-px mt-1 bg-white rounded-sm"></span>
+          <span class="relative block w-6 h-px mt-1 bg-white rounded-sm"></span>
         </button>
       </div>
-      <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
-        <ul class="flex flex-col lg:flex-row list-none ml-auto">
+      <div class="items-center flex-grow lg:flex" id="example-navbar-warning">
+        <ul class="flex flex-col ml-auto list-none lg:flex-row">
           {{-- texto e icone --}}
           <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+            <a class="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
               href="('/user')">
               <x-feathericon-user />
               <span class="ml-2">Profile</span>
