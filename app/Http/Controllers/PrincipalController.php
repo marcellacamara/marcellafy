@@ -9,7 +9,7 @@ class PrincipalController extends Controller
 
     public function index()
     {
-        return view('site.dashboard');
+        return view('welcome');
     }
 
     public function create()

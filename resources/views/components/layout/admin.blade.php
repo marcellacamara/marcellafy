@@ -9,15 +9,15 @@
   <title>MarcellaFy</title>
 </head>
 
-<body class="text-gray-100 bg-violet">
-  <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-pink-500 ">
+<body class="text-gray-100 bg-gradient-to-r from-purple-500 to-pink-500">
+  <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-transparent">
     <div class="container flex flex-wrap items-center justify-between px-4 mx-auto">
       <div class="relative flex justify-between w-full px-4 lg:w-auto lg:static lg:block lg:justify-start">
-        <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:bg-black hover:text-lime-400 whitespace-nowrap"
+        <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:opacity-75 whitespace-nowrap"
           href="/dashboard">
           Dashboard
         </a>
-        <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:bg-black hover:text-lime-400 whitespace-nowrap"
+        <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:opacity-75 whitespace-nowrap"
           href="/admin/artists">
           Artistas
         </a>
