@@ -1,8 +1,7 @@
-@extends('templates.template')
-
-@section('content')
+<x-layout.topbar />
+<x-guest-layout>
   @php
-  $title = 'Álbum view';
+    $title = 'Álbum view';
   @endphp
   <h3 class="text-center">{{ $title }}</h3>
 
@@ -73,4 +72,4 @@
 
     </tbody>
   </table>
-@endsection
+</x-guest-layout>

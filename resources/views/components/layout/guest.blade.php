@@ -13,9 +13,17 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+
+  </style>
 
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 </head>
 
 <body class="bg-gradient-to-r from-purple-500 to-pink-500">
