@@ -39,8 +39,17 @@
     </div>
   </nav>
 
+
+
   <div class="px-12">
-    <div class="overflow-x-hidden shadow-md sm:rounded-lg">
+    <div class="flex justify-end ">
+      <x-button class="bg-black hover:bg-white">
+        <a href="/artists/create">
+          Cadastrar artista
+        </a>
+      </x-button>
+    </div>
+    <div class="overflow-x-hidden shadow-md sm:rounded-lg text-gray-100 bg-transparent">
       <table class="w-full text-sm text-left text-white">
         <thead class="text-xs text-white uppercase bg-black">
           <tr>
@@ -51,7 +60,7 @@
         </thead>
         <tbody>
           @foreach ($artists as $artist)
-            <tr class="border-2 border-black">
+            <tr class="border-2 border-transparent hover:bg-gray-900/10">
               <th scope="row" class="px-2 py-3 font-medium text-base text-white">
                 <a href="
                 {{ route('admin.artists.albums.index', $artist->id) }}">{{ $artist->name }}</a>
