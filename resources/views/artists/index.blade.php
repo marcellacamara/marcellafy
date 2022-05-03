@@ -45,7 +45,7 @@
                   type="button">Deletar</button>
                 <div x-cloak x-show="show"
                   class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
-                  <div @click.away="show = false" class="max-w-sm p-6 bg-black ">
+                  <div @click.away="show = false" class="max-w-sm p-6 bg-black rounded-lg">
                     <div class="flex items-center justify-between">
                       <h3 class="text-2xl">Deletar artista</h3>
                       <svg @click="show=false" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
@@ -59,13 +59,13 @@
                       <p class="mb-4 text-sm">Tem certeza que deseja deletar {{ $artist->name }}?</p>
                       <div class="flex">
                         <button @click="show=false"
-                          class="bg-red-600 text-white font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Cancelar</button>
+                          class="bg-white text-black hover:text-opacity-75 font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Cancelar</button>
                         <form class="m-0" action="{{ route('admin.artists.destroy', $artist->id) }}"
                           method="post">
                           @csrf
                           @method('DELETE')
                           <button
-                            class="bg-green-600 text-white font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Salvar</button>
+                            class="bg-pink-600 text-white hover:text-opacity-75 font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Salvar</button>
                         </form>
                       </div>
                     </div>
