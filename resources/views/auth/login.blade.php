@@ -1,5 +1,5 @@
-<x-layout.topbar />
 <x-guest-layout>
+  <x-layout.topbar />
   <x-auth-card>
     <x-slot name="logo">
       <a href="/">
@@ -18,7 +18,7 @@
 
       <!-- Email Address -->
       <div>
-        <x-label for="email" :value="__('Email')" />
+        <x-label for="email">Email</x-label>
 
         <x-input id="email" class="block w-full mt-1 text-black" type="email" name="email" :value="old('email')" required
           autofocus />
@@ -26,7 +26,7 @@
 
       <!-- Password -->
       <div class="mt-4 text-black">
-        <x-label for="password" :value="__('Password')" />
+        <x-label for="password">Password</x-label>
 
         <x-input id="password" class="block w-full mt-1" type="password" name="password" required
           autocomplete="current-password" />
@@ -44,12 +44,12 @@
 
       <div class="flex items-center justify-end mt-4">
         @if (Route::has('password.request'))
-          <a class="text-sm text-gray-400 underline hover:text-gray-600" href="{{ route('password.request') }}">
+          <a class="text-sm text-gray-400 underline hover:text-gray-500" href="{{ route('password.request') }}">
             {{ __('Forgot your password?') }}
           </a>
         @endif
 
-        <x-button class="ml-3">
+        <x-button class="ml-3 mr-1 mb-1">
           {{ __('Login') }}
         </x-button>
       </div>

@@ -1,9 +1,3 @@
-@extends('templates.template')
-
-@section('content')
-  @php
-  $title = 'Cadastrar álbum';
-  @endphp
   <h3 class="text-center">{{ $title }}</h3>
 
   <div class="m-auto col-8">
@@ -11,7 +5,8 @@
       @csrf
       <div class="form-group">
         <label for="name">Nome do álbum</label>
-        <input type="text" name="title" id="title" class="form-control" placeholder="Nome:" value="{{ old('name') }}">
+        <input type="text" name="title" id="title" class="form-control" placeholder="Nome:"
+          value="{{ old('name') }}">
       </div>
 
       <div class="form-group">
@@ -29,4 +24,3 @@
       </div>
     </form>
   </div>
-@endsection
