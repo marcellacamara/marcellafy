@@ -24,6 +24,11 @@ class ArtistController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'avatar' => 'required|image',
+        ]);
+
         Artist::create([
             'name' => $request->name,
             'avatar' => $request->file('avatar')->store('images/artists'),
@@ -48,6 +53,11 @@ class ArtistController extends Controller
 
     public function update(Request $request, Artist $artist)
     {
+        $request->validate([
+            'name' => 'required',
+            'avatar' => 'required|image',
+        ]);
+
         $artist->name = $request->name;
         $artist->avatar = $request->file('avatar')->store('images/artists');
         $artist->save();

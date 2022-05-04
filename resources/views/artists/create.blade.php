@@ -14,7 +14,7 @@
       </div>
 
       <div class="flex items-center justify-end mt-3">
-        <x-button class="ml-3">
+        <x-button class="ml-3 hover:text-opacity-75">
           {{ __('Cadastrar') }}
         </x-button>
       </div>

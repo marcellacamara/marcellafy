@@ -26,6 +26,11 @@ class AlbumController extends Controller
 
     public function store(Request $request, Artist $artist)
     {
+        $request->validate([
+            'title' => 'required',
+            'cover_image' => 'required|image',
+        ]);
+
         Album::create([
             'title' => $request->title,
             'artist_id' => $artist->id,
@@ -52,10 +57,17 @@ class AlbumController extends Controller
 
     public function update(Request $request, Album $album)
     {
+        $request->validate([
+            'title' => 'required',
+            'cover_image' => 'required|image',
+        ]);
+
         $album->title = $request->title;
         $album->cover_image = $request->file('cover_image')->store('images/albums');
         $album->year = $request->year;
         $album->save();
+
+        return redirect()->route('admin.artists.albums.index', $album->artist_id);
     }
 
     public function destroy(Album $album)
