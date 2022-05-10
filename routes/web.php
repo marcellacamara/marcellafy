@@ -6,6 +6,7 @@ use App\Http\Controllers\MusicController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\UserController;
+use App\Models\Artist;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
@@ -28,7 +29,8 @@ Route::fallback(function () {
 Route::get('/', [PrincipalController::class, 'index'])->name('principal');
 
 Route::get('/dashboard', function () {
-    return view('site.dashboard-admin');
+    $artists = Artist::all();
+    return view('site.dashboard-admin', compact('artists'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';

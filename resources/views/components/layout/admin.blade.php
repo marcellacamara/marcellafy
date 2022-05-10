@@ -18,10 +18,12 @@
           href="/dashboard">
           Dashboard
         </a>
-        <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:opacity-75 whitespace-nowrap"
-          href="/admin/artists">
-          Artistas
-        </a>
+        @if (Auth::user()->isAdmin())
+          <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:opacity-75 whitespace-nowrap"
+            href="/admin/artists">
+            Administrator
+          </a>
+        @endif
         <button
           class="block px-3 py-1 text-xl leading-none bg-transparent border border-double rounded outline-none cursor-pointer lg:hidden focus:outline-none"
           type="button">
