@@ -666,6 +666,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-1 {
   flex: 1 1 0%;
 }
+.flex-\[2\] {
+  flex: 2;
+}
 .shrink-0 {
   flex-shrink: 0;
 }
@@ -717,6 +720,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .grid-rows-3 {
   grid-template-rows: repeat(3, minmax(0, 1fr));
@@ -867,6 +873,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-gray-900\/20 {
   border-color: rgb(17 24 39 / 0.2);
 }
+.border-gray-900\/10 {
+  border-color: rgb(17 24 39 / 0.1);
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -938,6 +947,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-900\/20 {
   background-color: rgb(17 24 39 / 0.2);
 }
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -972,6 +985,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-10 {
   padding: 2.5rem;
+}
+.p-4 {
+  padding: 1rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -1304,6 +1320,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .hover\:bg-gray-800\/20:hover {
   background-color: rgb(31 41 55 / 0.2);
+}
+.hover\:bg-black\/10:hover {
+  background-color: rgb(0 0 0 / 0.1);
+}
+.hover\:bg-black\/75:hover {
+  background-color: rgb(0 0 0 / 0.75);
+}
+.hover\:bg-black\/60:hover {
+  background-color: rgb(0 0 0 / 0.6);
 }
 .hover\:bg-gradient-to-l:hover {
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
