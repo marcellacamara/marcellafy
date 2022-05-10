@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Artist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -12,14 +13,14 @@ class ArtistController extends Controller
 
     public function index()
     {
-        return view('artists.index', [
+        return view('admin.artists.index', [
             'artists' => Artist::all()
         ]);
     }
 
     public function create()
     {
-        return view('artists.create');
+        return view('admin.artists.create');
     }
 
     public function store(Request $request)
@@ -39,14 +40,14 @@ class ArtistController extends Controller
 
     public function show(Artist $artist)
     {
-        return view('artists.index', [
+        return view('admin.artists.index', [
             'artist' => $artist
         ]);
     }
 
     public function edit(Artist $artist)
     {
-        return view('artists.edit', [
+        return view('admin.artists.edit', [
             'artist' => $artist
         ]);
     }

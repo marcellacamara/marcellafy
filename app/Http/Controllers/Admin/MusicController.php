@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Album;
 use App\Models\Music;
 use Illuminate\Http\Request;
@@ -13,14 +14,14 @@ class MusicController extends Controller
 
     public function index(Album $album)
     {
-        return view('musics.index', [
+        return view('admin.musics.index', [
             'album' => $album,
         ]);
     }
 
     public function create(Album $album)
     {
-        return view('musics.create', [
+        return view('admin.musics.create', [
             'album' => $album
         ]);
     }
@@ -45,7 +46,7 @@ class MusicController extends Controller
 
     public function show(Album $album, Music $music)
     {
-        return view('musics.index', [
+        return view('admin.musics.index', [
             'album' => $album,
             'music' => $music,
         ]);
@@ -53,7 +54,7 @@ class MusicController extends Controller
 
     public function edit(Music $music)
     {
-        return view('musics.edit', [
+        return view('admin.musics.edit', [
             'music' => $music,
         ]);
     }

@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ProfileController extends Controller
 {
-    public function user()
+    public function index()
     {
         return view('site.user');
     }
