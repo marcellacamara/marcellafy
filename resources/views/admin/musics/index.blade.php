@@ -7,11 +7,12 @@
     <div class="flex items-center justify-between">
       <h1 class="text-2xl font-semibold hover:font-bold">Músicas do álbum <span
           class="uppercase">{{ $album->title }}</span></h1>
-      <x-button class="mb-1 mr-1 bg-black hover:text-opacity-75">
+      <button
+        class="bg-black text-white active:bg-pink-500 hover:text-opacity-75 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
         <a href="{{ route('admin.albums.musics.create', $album->id) }}">
           Cadastrar música
         </a>
-      </x-button>
+      </button>
     </div>
 
     <div class="overflow-x-hidden text-gray-100 bg-transparent shadow-md sm:rounded-lg">

@@ -14,7 +14,7 @@ class AlbumController extends Controller
     public function index(Artist $artist)
     {
         return view('admin.albums.index', [
-            'artist' => $artist
+            'artist' => $artist,
         ]);
     }
 

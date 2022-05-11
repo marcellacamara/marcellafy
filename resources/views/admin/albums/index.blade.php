@@ -7,11 +7,12 @@
     <div class="flex items-center justify-between">
       <h1 class="text-2xl font-semibold hover:font-bold">Álbuns de <span
           class="uppercase">{{ $artist->name }}</span></h1>
-      <x-button class="mb-1 mr-1 bg-black hover:text-opacity-75">
+      <button
+        class="px-4 py-2 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-black rounded shadow outline-none active:bg-pink-500 hover:text-opacity-75 hover:shadow-md focus:outline-none">
         <a href="{{ route('admin.artists.albums.create', $artist->id) }}">
           Cadastrar álbum
         </a>
-      </x-button>
+      </button>
     </div>
 
     <div class="overflow-x-hidden text-gray-100 bg-transparent shadow-md sm:rounded-lg">
@@ -20,6 +21,7 @@
           <tr>
             <th scope="col" class="px-2 py-3">Capa</th>
             <th scope="col" class="px-2 py-3">Título</th>
+            <th scope="col" class="px-2 py-3">Músicas</th>
             <th scope="col" class="px-2 py-3">Duração</th>
             <th scope="col" class="px-2 py-3">Ações</th>
           </tr>
@@ -41,7 +43,11 @@
               </td>
 
               <td class="px-2 py-3 font-medium">
-                {{ $album->duration }}
+                {{ $album->musics->count() }}
+              </td>
+
+              <td class="px-2 py-3 font-medium">
+                {{ sprintf('%02d:%02d:%02d', $album->musics->sum('duration') / 3600, $album->musics->sum('duration') / 60, $album->musics->sum('duration') % 60) }}
               </td>
 
               <td class="px-2 py-3" x-data="{ show: false }">

@@ -5,11 +5,12 @@
 
   <div class="px-12">
     <div class="flex justify-end ">
-      <x-button class="bg-black hover:text-opacity-75 mr-1 mb-1">
+      <button
+        class="bg-black text-white active:bg-pink-500 hover:text-opacity-75 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
         <a href="{{ route('admin.artists.create') }}">
           Cadastrar artista
         </a>
-      </x-button>
+      </button>
     </div>
     <div class="overflow-x-hidden shadow-md sm:rounded-lg text-gray-100 bg-transparent">
       <table class="w-full text-sm text-left text-white">

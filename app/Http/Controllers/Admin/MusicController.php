@@ -34,6 +34,8 @@ class MusicController extends Controller
         ]);
         $music = new GetId3(request()->file('file'));
 
+        // dd($album->musics()->sum('duration'));
+
         Music::create([
             'title' => $request->title,
             'album_id' => $album->id,

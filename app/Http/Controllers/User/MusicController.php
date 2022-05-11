@@ -11,7 +11,9 @@ class MusicController extends Controller
 {
     public function index(Album $album)
     {
-        //
+        return view('user.musics.index', [
+            'album' => $album,
+        ]);
     }
 
     public function show(Album $album, Music $music)
