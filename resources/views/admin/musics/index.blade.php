@@ -8,7 +8,7 @@
       <h1 class="text-2xl font-semibold hover:font-bold">Músicas do álbum <span
           class="uppercase">{{ $album->title }}</span></h1>
       <button
-        class="bg-black text-white active:bg-pink-500 hover:text-opacity-75 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+        class="px-4 py-2 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-black rounded shadow outline-none active:bg-pink-500 hover:text-opacity-75 hover:shadow-md focus:outline-none">
         <a href="{{ route('admin.albums.musics.create', $album->id) }}">
           Cadastrar música
         </a>
@@ -37,6 +37,7 @@
               <td class="px-2 py-3 font-medium uppercase hover:underline">
                 <audio controls>
                   <source src="{{ asset($music->file) }}" type="audio/mpeg">
+                </audio>
               </td>
 
               <td class="px-2 py-3 font-medium uppercase">

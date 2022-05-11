@@ -1,9 +1,9 @@
 @if (session()->has('error') || session()->has('errors'))
   <div x-cloak x-data="{ show: true }" x-show="show"
-    class="text-white px-6 py-1 border-0 rounded relative mb-4 mt-2 bg-black">
-    <span class="text-xl inline-block mr-4 align-middle">
+    class="relative px-6 py-1 mt-2 mb-4 text-white bg-black border-0 rounded">
+    <span class="inline-block mr-4 text-xl align-middle">
     </span>
-    <span class="inline-block align-middle mr-4">
+    <span class="inline-block mr-4 align-middle">
       @foreach ($errors->all() as $error)
         <li>
           <b class="capitalize">Alert! </b>{{ $error }}
@@ -11,7 +11,7 @@
       @endforeach
     </span>
     <button @click="show=false"
-      class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-1 mr-4 outline-none focus:outline-none">
+      class="absolute top-0 right-0 mt-1 mr-4 text-2xl font-semibold leading-none bg-transparent outline-none focus:outline-none">
       <span>×</span>
     </button>
   </div>

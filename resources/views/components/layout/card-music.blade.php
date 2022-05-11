@@ -8,6 +8,6 @@
     <span class="text-2xl font-bold tracking-tight text-white uppercase">{{ $music->title }} </span>
     <audio controls>
       <source src="{{ asset($music->file) }}" type="audio/mpeg">
-      <x-feathericon-play />
+    </audio>
   </div>
 </div>
