@@ -11,26 +11,26 @@
 
 
 
-<body class="bg-gradient-to-r from-purple-500 to-pink-500 w-screen">
+<body class="w-screen bg-gradient-to-r from-purple-500 to-pink-500">
   <x-layout.topbar />
   <div class="grid grid-cols-1 place-items-center">
     <div>
       <img class="w-10 sm:w-20 pt-36" src="icons/icone-notas-musicais.png" alt="logo-welcome">
     </div>
     <div>
-      <p class="text-black text-center font-semibold hover:font-bold text-2xl sm:text-6xl pt-4">
+      <p class="pt-4 text-2xl font-semibold text-center text-black hover:font-bold sm:text-6xl">
         Music for Everyone
       </p>
     </div>
     <div class="flex gap-16 pt-24">
       <button type="submit">
-        <a class="bg-purple-400 hover:bg-gradient-to-l from-purple-400 to-pink-400 text-white active:bg-pink-600 font-bold uppercase text-base px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        <a class="px-4 py-2 mb-1 mr-1 text-lg font-bold text-white uppercase transition-all duration-150 ease-linear bg-purple-400 rounded-md shadow outline-none hover:bg-gradient-to-l from-purple-400 to-pink-400 active:bg-pink-600 hover:shadow-md focus:outline-none"
           href="{{ route('login') }}">
           LOGIN
         </a>
       </button>
       <button type="submit">
-        <a class="bg-purple-400 hover:bg-gradient-to-l from-purple-400 to-pink-400 text-white active:bg-pink-600 font-bold uppercase text-base px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        <a class="px-4 py-2 mb-1 mr-1 text-lg font-bold text-white uppercase transition-all duration-150 ease-linear bg-purple-400 rounded-md shadow outline-none hover:bg-gradient-to-l from-purple-400 to-pink-400 active:bg-pink-600 hover:shadow-md focus:outline-none"
           href="{{ route('register') }}">
           REGISTER
         </a>
