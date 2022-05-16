@@ -33,7 +33,8 @@ Route::fallback(function () {
     echo 'ERROR 404. Page not found. <br> <a href="/">Go to home</a>';
 });
 
-// Route::get('/users', [UserController::class, 'user']);
+Route::get('/user', [ProfileController::class, 'edit'])->name('user');
+Route::put('/user', [ProfileController::class, 'update'])->name('user.update');
 // Route::get('/playlists', [PlaylistController::class, 'playlist']);
 
 Route::get('/', [PrincipalController::class, 'index'])->name('principal');

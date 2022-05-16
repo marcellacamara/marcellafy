@@ -27,7 +27,7 @@
 </head>
 
 <body class="bg-gradient-to-r from-purple-500 to-pink-500">
-  <div class="font-sans antialiased text-white">
+  <div class="font-sans antialiased text-white h-screen flex flex-col">
     {{ $slot }}
   </div>
 </body>

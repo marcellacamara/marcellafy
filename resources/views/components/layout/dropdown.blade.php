@@ -25,27 +25,29 @@
         x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
         x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
         x-transition:leave-end="transform opacity-0 scale-95"
-        class="absolute right-0 flex flex-col w-48 h-20 py-1 mt-2 origin-top-right bg-transparent rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="absolute right-0 flex flex-col w-48 h-20 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
         <!-- Active: "bg-gray-100", Not Active: "" -->
         {{-- <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
             id="user-menu-item-0">Your Profile</a> --}}
 
-        <button class="flex px-4 py-2 text-sm text-left text-white hover:bg-gray-900/10" role="menuitem" tabindex="-1"
-          id="theme-toggle">
+        <a href="{{ route('user') }}" class="flex px-4 py-2 text-sm text-left text-black hover:bg-gray-900/10"
+          role="menuitem" tabindex="-1" id="theme-toggle">
           {{-- <x-heroicon-s-moon id="theme-toggle-dark-icon" class="hidden w-5 h-5" />
           <x-heroicon-s-sun id="theme-toggle-light-icon" class="hidden w-5 h-5" /> --}}
-          <span class="flex items-center ml-2 text-sm font-bold leading-snug text-white uppercase hover:opacity-75">
-            Profile
+          <x-feathericon-user />
+          <span class="flex items-center ml-2 text-sm font-bold leading-snug text-black uppercase hover:opacity-75">
+            PROFILE
           </span>
-        </button>
+        </a>
         <form action="{{ route('logout') }}" method="POST">
           @csrf
-          <button type="submit" class="flex w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-900/10"
+          <button type="submit" class="flex w-full px-4 py-2 text-sm text-left text-black hover:bg-gray-900/10"
             role="menuitem" tabindex="-1" id="user-menu-item-2">
             {{-- <x-heroicon-s-logout class="w-5 h-5" /> --}}
-            <span class="flex items-center ml-2 text-sm font-bold leading-snug text-white uppercase hover:opacity-75">
-              Logout
+            <x-feathericon-log-out />
+            <span class="flex items-center ml-2 text-sm font-bold leading-snug text-black uppercase hover:opacity-75">
+              LOG OUT
             </span>
           </button>
         </form>
