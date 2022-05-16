@@ -9,5 +9,8 @@
     <audio controls>
       <source src="{{ asset($music->file) }}" type="audio/mpeg">
     </audio>
+    <x-button class="justify-end bg-black">
+      {{ __('Adicionar música à playlist:') }}
+    </x-button>
   </div>
 </div>
