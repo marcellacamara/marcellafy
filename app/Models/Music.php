@@ -17,4 +17,9 @@ class Music extends Model
     {
         return $this->belongsTo(Album::class);
     }
+
+    public function playlist()
+    {
+        return $this->belongsToMany(Playlist::class);
+    }
 }

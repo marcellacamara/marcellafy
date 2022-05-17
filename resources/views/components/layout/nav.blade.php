@@ -5,6 +5,10 @@
         href="/dashboard">
         Dashboard
       </a>
+      <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:opacity-75 whitespace-nowrap"
+        href="/playlists">
+        Playlists
+      </a>
       @if (Auth::user()->isAdmin())
         <a class="inline-block px-4 py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase transition-all rounded-md hover:opacity-75 whitespace-nowrap"
           href="/admin/artists">

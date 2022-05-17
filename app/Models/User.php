@@ -27,4 +27,9 @@ class User extends Authenticatable
     {
         return $this->is_admin;
     }
+
+    public function playlists()
+    {
+        return $this->hasMany(Playlist::class);
+    }
 }

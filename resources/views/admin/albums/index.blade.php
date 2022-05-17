@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-layout.guest>
   <x-layout.topbar />
   <x-alert />
   <x-layout.nav />
@@ -93,4 +93,4 @@
       </table>
     </div>
   </div>
-</x-guest-layout>
+</x-layout.guest>

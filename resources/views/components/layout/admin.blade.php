@@ -8,6 +8,12 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <title>MarcellaFy</title>
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+
+  </style>
 </head>
 
 <body class="text-gray-100 bg-gradient-to-r from-purple-500 to-pink-500">

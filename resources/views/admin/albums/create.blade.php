@@ -1,5 +1,6 @@
  <x-guest-layout>
    <x-layout.topbar />
+   <x-layout.nav />
    <x-alert />
    <x-form-card>
      <form method="POST" action="{{ route('admin.artists.albums.store', $artist->id) }}"

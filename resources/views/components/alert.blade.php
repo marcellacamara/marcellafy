@@ -1,4 +1,4 @@
-@if (session()->has('error') || session()->has('errors'))
+@if (session()->has('errors'))
   <div x-cloak x-data="{ show: true }" x-show="show"
     class="relative px-6 py-1 mt-2 mb-4 text-white bg-black border-0 rounded">
     <span class="inline-block mr-4 text-xl align-middle">
