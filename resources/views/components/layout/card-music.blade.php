@@ -1,4 +1,4 @@
-@props(['music', 'album'])
+@props(['music', 'album', 'playlists'])
 <div class="flex bg-transparent border rounded-lg shadow-md hover:bg-gray-900/10 border-gray-900/10">
 
   <img class="w-24 align-middle border-none rounded rounded-t-lg shadow" src="{{ asset($album->cover_image) }}"
@@ -13,9 +13,9 @@
     <div @click.away="open = false" class="relative ml-3" x-data="{ open: false }">
       <div>
         <button @click="open = !open" type="button"
-          class="bg-black text-white hover:text-opacity-75 active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 mr-4 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
+          class="px-4 py-2 mr-4 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-black rounded shadow outline-none hover:text-opacity-75 active:bg-pink-600 hover:shadow-md focus:outline-none"
           id="playlist-button" aria-expanded="false" aria-haspopup="true">
-          <span class="sr-only uppercase">Adicionar música a playlist</span>
+          <span class="uppercase sr-only">Adicionar música a playlist</span>
           Adicionar música a playlist
         </button>
       </div>
@@ -28,7 +28,14 @@
         <a href="{{ route('user') }}" class="flex px-4 py-2 text-sm text-left text-black hover:bg-gray-900/10"
           role="menuitem" tabindex="-1" id="theme-toggle">
           <span class="flex items-center ml-2 text-sm font-bold leading-snug text-black uppercase hover:opacity-75">
-            PROFILE
+            @foreach ($playlists as $playlist)
+              <x-feathericon-check class="mr-1" />
+              <div class="flex flex-row items-center flex-1">
+                <div class="flex flex-col">
+                  <span class="text-sm font-bold tracking-tight text-black uppercase">{{ $playlist->name }}</span>
+                </div>
+              </div>
+            @endforeach
           </span>
         </a>
       </div>

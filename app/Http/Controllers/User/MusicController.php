@@ -13,6 +13,7 @@ class MusicController extends Controller
     {
         return view('user.musics.index', [
             'album' => $album,
+            'playlists' => auth()->user()->playlists,
         ]);
     }
 

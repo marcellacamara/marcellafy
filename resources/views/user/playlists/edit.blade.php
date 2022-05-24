@@ -11,7 +11,7 @@
           value="{{ $playlist->name }}" />
       </div>
       <div class="flex items-center justify-end mt-3">
-        <a href="{{ route('admin.artists.index') }}"
+        <a href="{{ route('playlists.index') }}"
           class="px-4 py-2 ml-3 text-xs font-bold text-black uppercase transition-all duration-150 ease-linear bg-white rounded outline-none hover:text-opacity-75 focus:outline-none">
           Cancelar
         </a>
@@ -21,3 +21,4 @@
       </div>
     </form>
   </x-form-card>
+</x-layout.guest>
