@@ -32,9 +32,8 @@ class MusicController extends Controller
             'title' => 'required',
             'file' => 'required|mimes:mp3',
         ]);
-        $music = new GetId3(request()->file('file'));
 
-        // dd($album->musics()->sum('duration'));
+        $music = new GetId3($request->file('file'));
 
         Music::create([
             'title' => $request->title,

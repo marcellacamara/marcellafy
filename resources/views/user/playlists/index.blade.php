@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-layout.guest>
   <x-layout.topbar />
   <x-layout.nav />
   <span class="p-4 text-6xl font-bold tracking-tight text-black uppercase hover:font-extrabold">Playlists</span>
@@ -18,4 +18,4 @@
     @endforeach
   </div>
 
-</x-guest-layout>
+</x-layout.guest>

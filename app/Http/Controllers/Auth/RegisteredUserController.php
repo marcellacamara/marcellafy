@@ -45,6 +45,10 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $user->playlists()->create([
+            'name' => 'Músicas favoritas',
+        ]);
+
         event(new Registered($user));
 
         Auth::login($user);

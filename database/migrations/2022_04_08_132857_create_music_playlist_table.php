@@ -17,7 +17,7 @@ class CreateMusicPlaylistTable extends Migration
     {
         Schema::create('music_playlist', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Music::class)->constrained();
+            $table->foreignIdFor(Music::class)->constrained('musics');
             $table->foreignIdFor(Playlist::class)->constrained();
             $table->timestamps();
         });
