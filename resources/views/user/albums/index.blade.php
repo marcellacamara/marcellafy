@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-layout.guest>
   <x-layout.topbar />
   <x-layout.nav />
   <span
@@ -8,4 +8,4 @@
       <x-layout.card-album :album="$album" :href="route('albums.musics.index', $album->id)" />
     @endforeach
   </div>
-</x-guest-layout>
+</x-layout.guest>

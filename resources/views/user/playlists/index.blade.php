@@ -1,5 +1,6 @@
 <x-layout.guest>
   <x-layout.topbar />
+  <x-alert />
   <x-layout.nav />
   <span class="p-4 text-6xl font-bold tracking-tight text-black uppercase hover:font-extrabold">Playlists</span>
   <div class="px-4">

@@ -19,10 +19,6 @@ module.exports = {
                     200: "#edf2f7",
                     300: "#e2e8f0",
                 },
-                green: "#b9ee02",
-                purple: {
-                    950: "#8c33c3",
-                },
                 fontFamily: {
                     sans: ["Nunito", ...defaultTheme.fontFamily.sans],
                 },
