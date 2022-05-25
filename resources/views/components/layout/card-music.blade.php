@@ -13,7 +13,7 @@
     <div @click.away="open = false" class="relative ml-3" x-data="{ open: false }">
       <div>
         <button @click="open = !open" type="button"
-          class="px-4 py-2 mr-4 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-black rounded shadow outline-none hover:text-opacity-75 active:bg-pink-600 hover:shadow-md focus:outline-none"
+          class="z-0 px-4 py-2 mr-4 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-black rounded shadow outline-none hover:text-opacity-75 active:bg-pink-600 hover:shadow-md focus:outline-none"
           id="playlist-button" aria-expanded="false" aria-haspopup="true">
           <span class="uppercase sr-only">Adicionar música a playlist</span>
           Adicionar música a playlist
@@ -23,21 +23,23 @@
         x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
         x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
         x-transition:leave-end="transform opacity-0 scale-95"
-        class="absolute right-0 flex flex-col w-48 h-20 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="z-10 absolute right-0 flex flex-col py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-        <a href="{{ route('user') }}" class="flex px-4 py-2 text-sm text-left text-black hover:bg-gray-900/10"
-          role="menuitem" tabindex="-1" id="theme-toggle">
-          <span class="flex items-center ml-2 text-sm font-bold leading-snug text-black uppercase hover:opacity-75">
+        <span class="flex items-center ml-2 text-sm font-bold leading-snug text-black uppercase">
+          <div>
             @foreach ($playlists as $playlist)
-              <x-feathericon-check class="mr-1" />
-              <div class="flex flex-row items-center flex-1">
-                <div class="flex flex-col">
-                  <span class="text-sm font-bold tracking-tight text-black uppercase">{{ $playlist->name }}</span>
+              <a href="{{ route('add-music', ['playlist' => $playlist->id, 'music_id' => $music->id]) }}"
+                class="relative flex px-2 py-2 text-sm text-left text-black hover:bg-gray-900/10" role="menuitem"
+                tabindex="-1" id="theme-toggle">
+                <div class="flex flex-row items-center flex-1">
+                  <div class="flex flex-col">
+                    <span class="text-sm font-bold tracking-tight text-black uppercase">{{ $playlist->name }}</span>
+                  </div>
                 </div>
-              </div>
+              </a>
             @endforeach
-          </span>
-        </a>
+          </div>
+        </span>
       </div>
     </div>
   </div>

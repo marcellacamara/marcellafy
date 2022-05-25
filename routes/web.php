@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ArtistController;
 use App\Http\Controllers\Admin\MusicController;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\AddMusicToPlaylistController;
 use App\Http\Controllers\User\AlbumController as UserAlbumController;
 use App\Http\Controllers\User\MusicController as UserMusicController;
 use App\Http\Controllers\User\PlaylistController;
@@ -12,6 +13,8 @@ use App\Models\Artist;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PrincipalController::class, 'index'])->name('principal');
+
+Route::get('/add-music/{playlist}', AddMusicToPlaylistController::class)->name('add-music');
 
 Route::get('/login', function () {
     return 'login';

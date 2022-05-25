@@ -38,7 +38,7 @@ class PlaylistController extends Controller
 
     public function show(Playlist $playlist)
     {
-        return view('user.playlists.index', [
+        return view('user.playlists.show', [
             'playlist' => $playlist
         ]);
     }
