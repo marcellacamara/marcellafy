@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-layout.guest>
   <x-layout.topbar />
   <x-alert />
   <x-layout.nav />
@@ -16,9 +16,9 @@
       <table class="w-full text-sm text-left text-white">
         <thead class="text-xs text-white uppercase bg-black">
           <tr>
-            <th scope="col" class="px-2 py-3">Artista</th>
-            <th scope="col" class="px-72 py-3">Avatar</th>
-            <th scope="col" class="px-2 py-3">Ações</th>
+            <th scope="col" class="w-[33.3%] px-2 py-3">Artista</th>
+            <th scope="col" class="w-[50%] px-2 py-3">Avatar</th>
+            <th scope="col" class="w-[16.7%] px-2 py-3">Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -28,7 +28,7 @@
                 <a href="
                 {{ route('admin.artists.albums.index', $artist->id) }}">{{ $artist->name }}</a>
               </th>
-              <td class="px-72 py-3">
+              <td class="px-2 py-3">
                 <div class="w-6/12 sm:w-4/12">
                   <img src="{{ asset($artist->avatar) }}" alt="{{ $artist->name }}"
                     class="shadow rounded w-24 align-middle border-none"
@@ -81,4 +81,4 @@
       </table>
     </div>
   </div>
-</x-guest-layout>
+</x-layout.guest>

@@ -74,7 +74,7 @@ class AlbumController extends Controller
     public function destroy(Album $album)
     {
         if ((bool)$album->musics->count()) {
-            return redirect()->back()->with('errors', "Não é possível deletar um álbum que possui música(s) cadastrada(s)!");
+            return redirect()->back()->withErrors("Não é possível deletar um álbum que possui música(s) cadastrada(s)!");
         }
 
         Storage::delete($album->cover_image);

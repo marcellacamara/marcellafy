@@ -19,11 +19,11 @@
       <table class="w-full text-sm text-left text-white">
         <thead class="text-xs text-white uppercase bg-black">
           <tr>
-            <th scope="col" class="px-2 py-3">Capa</th>
-            <th scope="col" class="px-2 py-3">Título</th>
-            <th scope="col" class="px-2 py-3">Músicas</th>
-            <th scope="col" class="px-2 py-3">Duração</th>
-            <th scope="col" class="px-2 py-3">Ações</th>
+            <th scope="col" class="w-[20%] px-2 py-3">Capa</th>
+            <th scope="col" class="w-[35%] px-2 py-3">Título</th>
+            <th scope="col" class="w-[10%] px-2 py-3">Músicas</th>
+            <th scope="col" class="w-[15%] px-2 py-3">Duração</th>
+            <th scope="col" class="w-[20%] px-2 py-3">Ações</th>
           </tr>
         </thead>
 

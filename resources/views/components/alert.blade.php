@@ -7,7 +7,7 @@
       <ul>
         @foreach ($errors->all() as $error)
           <li>
-            <b class="capitalize">Alert! </b>{{ $error }}
+            <b class="capitalize">Alerta! </b>{{ $error }}
           </li>
         @endforeach
       </ul>
@@ -24,7 +24,7 @@
     <span class="inline-block mr-4 text-xl align-middle">
     </span>
     <span class="inline-block mr-4 align-middle">
-      <b class="capitalize">Success! </b>{{ session()->get('success') }}
+      <b class="capitalize">Sucesso! </b>{{ session()->get('success') }}
     </span>
     <button @click="show=false"
       class="absolute top-0 right-0 mt-1 mr-4 text-2xl font-semibold leading-none bg-transparent outline-none focus:outline-none">
