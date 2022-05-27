@@ -18,7 +18,7 @@ class CreateMusicTable extends Migration
             $table->id();
             $table->string('title');
             $table->foreignIdFor(Album::class)->constrained();
-            $table->integer('duration');
+            $table->integer('duration')->default(0);
             $table->string('file');
             $table->timestamps();
         });

@@ -23,23 +23,21 @@
         x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
         x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
         x-transition:leave-end="transform opacity-0 scale-95"
-        class="z-10 absolute right-0 flex flex-col py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="absolute right-0 z-10 flex flex-col py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-        <span class="flex items-center ml-2 text-sm font-bold leading-snug text-black uppercase">
-          <div>
-            @foreach ($playlists as $playlist)
-              <a href="{{ route('add-music', ['playlist' => $playlist->id, 'music_id' => $music->id]) }}"
-                class="relative flex px-2 py-2 text-sm text-left text-black hover:bg-gray-900/10" role="menuitem"
-                tabindex="-1" id="theme-toggle">
-                <div class="flex flex-row items-center flex-1">
-                  <div class="flex flex-col">
-                    <span class="text-sm font-bold tracking-tight text-black uppercase">{{ $playlist->name }}</span>
-                  </div>
+        <div class="flex flex-col text-sm font-bold leading-snug text-black uppercase">
+          @foreach ($playlists as $playlist)
+            <a href="{{ route('add-music', ['playlist' => $playlist->id, 'music_id' => $music->id]) }}"
+              class="relative flex px-2 py-2 text-sm text-left text-black hover:bg-gray-900/10" role="menuitem"
+              tabindex="-1" id="theme-toggle">
+              <div class="flex flex-row items-center flex-1">
+                <div class="flex flex-col">
+                  <span class="text-sm font-bold tracking-tight text-black uppercase">{{ $playlist->name }}</span>
                 </div>
-              </a>
-            @endforeach
-          </div>
-        </span>
+              </div>
+            </a>
+          @endforeach
+        </div>
       </div>
     </div>
   </div>

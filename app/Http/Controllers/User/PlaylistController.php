@@ -11,7 +11,6 @@ class PlaylistController extends Controller
     public function index()
     {
         return view('user.playlists.index', [
-            $playlists = Playlist::all(),
             'playlists' => auth()->user()->playlists
         ]);
     }

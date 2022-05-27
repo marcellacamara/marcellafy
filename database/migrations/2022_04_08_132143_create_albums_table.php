@@ -12,7 +12,7 @@ class CreateAlbumsTable extends Migration
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignIdFor(Artist::class)->unique()->constrained();
+            $table->foreignIdFor(Artist::class)->constrained();
             $table->string('cover_image');
             $table->integer('duration')->default(0);
             $table->year('year');
