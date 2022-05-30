@@ -24,13 +24,13 @@
     </div>
     <div class="flex gap-16 pt-24">
       <button type="submit">
-        <a class="px-4 py-2 mb-1 mr-1 text-lg font-bold text-white uppercase transition-all duration-150 ease-linear bg-purple-400 rounded-md shadow outline-none hover:bg-gradient-to-l from-purple-400 to-pink-400 active:bg-pink-600 hover:shadow-md focus:outline-none"
+        <a class="px-4 py-2 mb-1 mr-1 text-lg font-bold text-white uppercase transition-all duration-150 ease-linear bg-black rounded-md shadow outline-none hover:opacity-75 active:bg-pink-600 hover:shadow-md focus:outline-none"
           href="{{ route('login') }}">
           LOGIN
         </a>
       </button>
       <button type="submit">
-        <a class="px-4 py-2 mb-1 mr-1 text-lg font-bold text-white uppercase transition-all duration-150 ease-linear bg-purple-400 rounded-md shadow outline-none hover:bg-gradient-to-l from-purple-400 to-pink-400 active:bg-pink-600 hover:shadow-md focus:outline-none"
+        <a class="px-4 py-2 mb-1 mr-1 text-lg font-bold text-white uppercase transition-all duration-150 ease-linear bg-black rounded-md shadow outline-none hover:opacity-75 active:bg-pink-600 hover:shadow-md focus:outline-none"
           href="{{ route('register') }}">
           REGISTER
         </a>

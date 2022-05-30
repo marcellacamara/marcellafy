@@ -17,4 +17,9 @@ class AlbumFactory extends Factory
             'year' => $this->faker->year(),
         ];
     }
+
+    public function hasFile()
+    {
+        return $this->state(['cover_image' => UploadedFile::fake()->image(uniqid() . '.jpg')]);
+    }
 }
