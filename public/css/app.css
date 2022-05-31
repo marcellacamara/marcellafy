@@ -925,10 +925,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(236 72 153 / var(--tw-bg-opacity));
 }
-.bg-purple-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(192 132 252 / var(--tw-bg-opacity));
-}
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -947,15 +943,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-from: #a855f7;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(168 85 247 / 0));
 }
-.from-purple-400 {
-  --tw-gradient-from: #c084fc;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(192 132 252 / 0));
-}
 .to-pink-500 {
   --tw-gradient-to: #ec4899;
-}
-.to-pink-400 {
-  --tw-gradient-to: #f472b6;
 }
 .fill-current {
   fill: currentColor;
@@ -1291,20 +1280,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
-.hover\:bg-gradient-to-l:hover {
-  background-image: linear-gradient(to left, var(--tw-gradient-stops));
-}
 .hover\:font-extrabold:hover {
   font-weight: 800;
 }
 .hover\:font-bold:hover {
   font-weight: 700;
-}
-.hover\:font-medium:hover {
-  font-weight: 500;
-}
-.hover\:font-semibold:hover {
-  font-weight: 600;
 }
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;

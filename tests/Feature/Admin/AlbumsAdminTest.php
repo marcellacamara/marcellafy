@@ -5,6 +5,8 @@ use App\Models\Artist;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use function Pest\Laravel\assertDatabaseHas;
+use function Pest\Laravel\delete;
 use function Pest\Laravel\get;
 use function Pest\Laravel\post;
 use function Pest\Laravel\put;
@@ -54,11 +56,19 @@ it('should be able to render edit album page', function () {
 it('should be able to update album', function () {
     $album = Album::factory()->for($this->artist)->create();
     $albumRequest = Album::factory()->hasFile()->for($this->artist)->make();
-    $album->cover_image = $album->cover_image->store('images/albums');
 
-    put(route('admin.albums.update', [$this->artist->id, $album->id]), $album->toArray())
+    put(route('admin.albums.update', $album->id), $albumRequest->toArray())
         ->assertSessionDoesntHaveErrors()
         ->assertRedirect(route('admin.artists.albums.index', $this->artist->id));
-    $album->cover_image = $album->cover_image->store('images/albums');
-    $this->assertDatabaseHas('albums', $album->toArray());
+    $albumRequest->cover_image = $albumRequest->cover_image->store('images/albums');
+    assertDatabaseHas(Album::class, $albumRequest->toArray());
+});
+
+it('should be able to destroy album', function () {
+    $album = Album::factory()->for($this->artist)->create();
+
+    delete(route('admin.albums.destroy', [$this->artist->id, $album->id]))
+        ->assertSessionDoesntHaveErrors()
+        ->assertRedirect(route('admin.artists.albums.index', $this->artist->id));
+    $this->assertDatabaseMissing('albums', $album->toArray());
 });

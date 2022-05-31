@@ -30,6 +30,7 @@ class AlbumController extends Controller
         $request->validate([
             'title' => 'required',
             'cover_image' => 'required|image',
+            'year' => 'required|numeric',
         ]);
 
         Album::create([
@@ -61,6 +62,7 @@ class AlbumController extends Controller
         $request->validate([
             'title' => 'required',
             'cover_image' => 'required|image',
+            'year' => 'required|numeric',
         ]);
 
         $album->title = $request->title;
