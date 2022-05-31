@@ -20,7 +20,9 @@ beforeEach(function () {
 });
 
 it('should be able to render albums admin page', function () {
-    get(route('admin.artists.albums.index', $this->artist->id))->assertOk()->assertViewIs('admin.albums.index');
+    get(route('admin.artists.albums.index', $this->artist->id))
+        ->assertOk()
+        ->assertViewIs('admin.albums.index');
 });
 
 it('should be able to list albums in albums admin page', function () {
@@ -32,13 +34,16 @@ it('should be able to list albums in albums admin page', function () {
 });
 
 it('should be able to render create album page', function () {
-    get(route('admin.artists.albums.create', $this->artist->id))->assertOk()->assertViewIs('admin.albums.create');
+    get(route('admin.artists.albums.create', $this->artist->id))
+        ->assertOk()
+        ->assertViewIs('admin.albums.create');
 });
 
 it('should be able to store album', function () {
     $album = Album::factory()->hasFile()->for($this->artist)->make();
 
-    post(route('admin.artists.albums.store', $this->artist->id), $album->toArray())->assertSessionDoesntHaveErrors()
+    post(route('admin.artists.albums.store', $this->artist->id), $album->toArray())
+        ->assertSessionDoesntHaveErrors()
         ->assertRedirect(route('admin.artists.albums.index', $this->artist->id));
     $album->cover_image = $album->cover_image->store('images/albums');
     $this->assertDatabaseHas('albums', $album->toArray());
@@ -70,5 +75,5 @@ it('should be able to destroy album', function () {
     delete(route('admin.albums.destroy', [$this->artist->id, $album->id]))
         ->assertSessionDoesntHaveErrors()
         ->assertRedirect(route('admin.artists.albums.index', $this->artist->id));
-    $this->assertDatabaseMissing('albums', $album->toArray());
+    $this->assertDatabaseMissing(Album::class, $album->toArray());
 });

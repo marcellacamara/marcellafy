@@ -16,4 +16,9 @@ class MusicFactory extends Factory
             'file' => UploadedFile::fake()->create('music.mp3', 1024)->store('musics'),
         ];
     }
+
+    public function hasFile()
+    {
+        return $this->state(['file' => UploadedFile::fake()->create('music.mp3', 1024)]);
+    }
 }
