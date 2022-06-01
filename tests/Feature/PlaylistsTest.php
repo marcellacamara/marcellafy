@@ -47,6 +47,13 @@ it('should be able to store playlist', function () {
     assertDatabaseHas(Playlist::class, $request);
 });
 
+it('should be able to show playlist', function () {
+    $playlist = Playlist::factory()->for($this->user)->create();
+
+    get(route('playlists.show', $playlist->id))
+        ->assertViewHas('playlist', fn ($pagePlaylist) => $pagePlaylist->name == $playlist->name);
+});
+
 it('should be able to render edit playlist page', function () {
     $playlist = Playlist::factory()->for($this->user)->create();
 
