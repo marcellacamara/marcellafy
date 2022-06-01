@@ -35,13 +35,6 @@ class PlaylistController extends Controller
         return redirect()->route('playlists.index');
     }
 
-    public function show(Playlist $playlist)
-    {
-        return view('user.playlists.show', [
-            'playlist' => $playlist
-        ]);
-    }
-
     public function edit(Playlist $playlist)
     {
         return view('user.playlists.edit', [

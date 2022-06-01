@@ -33,9 +33,4 @@ class ProfileController extends Controller
 
         return redirect()->route('user')->with('success', 'Perfil atualizado com sucesso!');
     }
-
-    public function destroy()
-    {
-        //
-    }
 }

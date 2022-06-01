@@ -16,9 +16,4 @@ class MusicController extends Controller
             'playlists' => auth()->user()->playlists,
         ]);
     }
-
-    public function show(Album $album, Music $music)
-    {
-        //
-    }
 }

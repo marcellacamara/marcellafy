@@ -60,8 +60,3 @@ it('should not be able to edit albums with invalid id', function () {
     get(route('admin.albums.edit', 'invalid-id'))
         ->assertNotFound();
 });
-
-it('should not be able to show albums with invalid id', function () {
-    get(route('admin.albums.show', 'invalid-id'))
-        ->assertNotFound();
-});

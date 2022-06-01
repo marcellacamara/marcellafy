@@ -38,9 +38,3 @@ it('should not be able to edit playlist with invalid id', function () {
     get(route('playlists.edit', 'invalid-id'))
         ->assertNotFound();
 });
-
-it('should not be able to show playlist with invalid id', function () {
-
-    get(route('playlists.show', 'invalid-id'))
-        ->assertNotFound();
-});

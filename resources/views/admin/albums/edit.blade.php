@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-layout.guest>
   <x-layout.topbar />
   <x-alert />
   <x-form-card>
@@ -20,7 +20,7 @@
       </div>
       <div class="flex items-center justify-end mt-3">
         <a href="{{ route('admin.artists.index') }}"
-          class="bg-white text-black hover:text-opacity-75 font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none ml-3 ease-linear transition-all duration-150">
+          class="px-4 py-2 ml-3 text-xs font-bold text-black uppercase transition-all duration-150 ease-linear bg-white rounded outline-none hover:text-opacity-75 focus:outline-none">
           Cancelar
         </a>
         <x-button class="ml-3">
@@ -29,4 +29,4 @@
       </div>
     </form>
   </x-form-card>
-</x-guest-layout>
+</x-layout.guest>

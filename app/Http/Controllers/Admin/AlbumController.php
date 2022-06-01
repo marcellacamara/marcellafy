@@ -43,13 +43,6 @@ class AlbumController extends Controller
         return redirect()->route('admin.artists.albums.index', $artist->id);
     }
 
-    public function show(Album $album)
-    {
-        return view('admin.albums.index', [
-            'album' => $album,
-        ]);
-    }
-
     public function edit(Album $album)
     {
         return view('admin.albums.edit', [

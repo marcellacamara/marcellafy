@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Album;
 use App\Models\Artist;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -7,6 +8,8 @@ use Illuminate\Http\UploadedFile;
 
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
+use function Pest\Laravel\assertDeleted;
+use function Pest\Laravel\assertModelExists;
 use function Pest\Laravel\delete;
 use function Pest\Laravel\get;
 use function Pest\Laravel\post;
@@ -85,4 +88,16 @@ it('should be able to destroy artist', function () {
         ->assertRedirect($artistIndexRoute);
 
     assertDatabaseMissing(Artist::class, ['id' => $artist->id]);
+});
+
+it('should not be able to destroy artist with albums', function () {
+    $artist = Artist::factory()->create();
+    $album = Album::factory()->for($artist)->create();
+
+    delete(route('admin.artists.destroy', $artist->id))
+        ->assertSessionHasErrors()
+        ->assertRedirect();
+
+    assertModelExists($artist);
+    assertModelExists($album);
 });

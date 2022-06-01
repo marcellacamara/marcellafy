@@ -38,13 +38,6 @@ class ArtistController extends Controller
         return redirect()->route('admin.artists.index');
     }
 
-    public function show(Artist $artist)
-    {
-        return view('admin.artists.index', [
-            'artist' => $artist
-        ]);
-    }
-
     public function edit(Artist $artist)
     {
         return view('admin.artists.edit', [

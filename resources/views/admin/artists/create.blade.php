@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-layout.guest>
   <x-layout.topbar />
   <x-alert />
   <x-form-card>
@@ -20,4 +20,4 @@
       </div>
     </form>
   </x-form-card>
-</x-guest-layout>
+</x-layout.guest>

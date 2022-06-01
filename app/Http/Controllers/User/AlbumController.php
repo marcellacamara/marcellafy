@@ -16,9 +16,4 @@ class AlbumController extends Controller
             'albums' => $artist->albums,
         ]);
     }
-
-    public function show(Artist $artist, Album $album)
-    {
-        //
-    }
 }

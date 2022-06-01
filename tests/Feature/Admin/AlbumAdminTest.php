@@ -2,10 +2,12 @@
 
 use App\Models\Album;
 use App\Models\Artist;
+use App\Models\Music;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use function Pest\Laravel\assertDatabaseHas;
+use function Pest\Laravel\assertModelExists;
 use function Pest\Laravel\delete;
 use function Pest\Laravel\get;
 use function Pest\Laravel\post;
@@ -72,8 +74,20 @@ it('should be able to update album', function () {
 it('should be able to destroy album', function () {
     $album = Album::factory()->for($this->artist)->create();
 
-    delete(route('admin.albums.destroy', [$this->artist->id, $album->id]))
+    delete(route('admin.albums.destroy', $album->id))
         ->assertSessionDoesntHaveErrors()
         ->assertRedirect(route('admin.artists.albums.index', $this->artist->id));
     $this->assertDatabaseMissing(Album::class, $album->toArray());
+});
+
+it('should not be able to destroy album with music', function () {
+    $album = Album::factory()->for($this->artist)->create();
+    $music = Music::factory()->for($album)->create();
+
+    delete(route('admin.albums.destroy', $album->id))
+        ->assertSessionHasErrors()
+        ->assertRedirect();
+
+    assertModelExists($album);
+    assertModelExists($music);
 });

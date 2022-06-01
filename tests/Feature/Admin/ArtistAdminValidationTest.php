@@ -58,9 +58,3 @@ it('should not be able to edit artists with invalid id', function () {
     get(route('admin.artists.edit', 'invalid-id'))
         ->assertNotFound();
 });
-
-it('should not be able to show artists with invalid id', function () {
-
-    get(route('admin.artists.show', 'invalid-id'))
-        ->assertNotFound();
-});

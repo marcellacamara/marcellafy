@@ -45,14 +45,6 @@ class MusicController extends Controller
         return redirect()->route('admin.albums.musics.index', [$album->id]);
     }
 
-    public function show(Album $album, Music $music)
-    {
-        return view('admin.musics.index', [
-            'album' => $album,
-            'music' => $music,
-        ]);
-    }
-
     public function edit(Music $music)
     {
         return view('admin.musics.edit', [
